@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const slider = document.getElementById("testimonial-comment-slider");
   const sliderOptions = slider.dataset.options;
   const parsedSliderOptions = JSON.parse(sliderOptions);
-  console.log(parsedSliderOptions);
 
   let testimonialCommentSlider = new Splide("#testimonial-comment-slider", {
     type: parsedSliderOptions.type,
