@@ -1,0 +1,114 @@
+.testimonial-section--wrapper {
+  color: #282824;
+}
+@media screen and (min-width: 990px) {
+  .testimonial-section--responsive-wrapper {
+    display: flex;
+    gap: 60px;
+  }
+}
+
+.testimonial-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  max-width: 338px;
+  max-height: 352px;
+}
+
+@media screen and (min-width: 990px) {
+  .testimonial-media {
+    width: 50%;
+  }
+  .testimonial-section--testimonial-wrapper {
+    width: 50%;
+  }
+  .testimonial-image {
+    max-width: 519px;
+    max-height: 640px;
+  }
+}
+
+.splide__slide.testimonial-section--comment-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 363px;
+  min-width: 324px;
+  padding: 15px;
+}
+
+.testimonial-section--comment-inner-wrapper {
+  width: 100%;
+  background: #f6ffc290;
+  border: 1px solid #5c6e4a;
+  padding: 32px 40px;
+  border-radius: 4px;
+}
+
+#testimonial-comment-slider
+  .splide__slide.is-active
+  .testimonial-section--comment-inner-wrapper {
+  background: #f6ffc2;
+}
+
+#testimonial-comment-slider .splide__slide {
+  margin: 20px 0;
+}
+#testimonial-comment-slider .splide__slide p {
+  margin: 5px 0;
+}
+
+.testimonial-section--header h2 {
+  font-size: clamp(3.3125rem, 2.7266rem + 1.25vw, 3.5rem);
+  font-weight: 500;
+}
+
+.testimonial-section--header p {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.testimonial-section--comment-inner-wrapper p {
+  font-size: 1.375rem;
+  font-weight: 400;
+}
+
+/* Avatar */
+.testimonial-section--comment-footer {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.testimonial-section--comment-footer img {
+  width: 65px;
+  height: 65px;
+  border-radius: 30px 0px 0px 0px;
+}
+
+.testimonial-section--author-name {
+  font-size: 18px;
+  color: #5c6e4a;
+}
+
+.testimonial-section--author-role {
+  font-size: 15px;
+}
+/* Splide pagination */
+li[role="presentation"] button.splide__pagination__page {
+  width: 15px;
+  height: 4px;
+  border-radius: 2px;
+  background: #d0d0c9;
+}
+
+li[role="presentation"] button.splide__pagination__page.is-active {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: #5c6e4a;
+  margin: 0 2px;
+  transform: none;
+}

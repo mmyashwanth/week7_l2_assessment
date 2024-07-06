@@ -1,0 +1,224 @@
+{{ 'testimonial-section.css' | asset_url | stylesheet_tag }}
+<script src="{{'testimonial-section.js' |  asset_url}}" defer></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% capture splideoptions %}
+    {
+      "type": "{{ section.settings.slide_type }}",
+      "perPage": 1,
+      "pagination": {{ section.settings.display_dots }},
+      "autoplay": {{ section.settings.autoplay_slide }},
+      "interval": {{ section.settings.autoplay_duration }}000,
+      "arrows": {{ section.settings.display_arrows }},
+      "breakpoints": {
+        "989": {
+          "perPage": 1
+        }
+      }
+    }
+    {% endcapture %}
+
+<div class="testimonial-section--wrapper section-{{ section.id }}-padding ">
+  <div class="testimonial-section--responsive-wrapper page-width">
+    <div id="testimonial-media">
+      {% for block in section.blocks %}
+        <img
+          class="testimonial-image {% if forloop.index0 != 0 %}hidden{% endif %}"
+          src="{{ block.settings.testimonial_image | image_url }}"
+          alt="{{ block.settings.testimonial_author }}"
+          data-index="{{ forloop.index0 }}"
+          height=""
+          width=""
+        >
+      {% endfor %}
+    </div>
+
+    <div class="testimonial-section--testimonial-wrapper">
+      <div class="testimonial-section--header">
+        <h2>{{ section.settings.section_title }}</h2>
+        <p>{{ section.settings.section_description }}</p>
+      </div>
+      <!--prettier-ignore-->
+      <div id="testimonial-comment-slider" class="splide" data-options='{{splideoptions}}'>
+        <div class="splide__track">
+          <ul class="splide__list">
+            {% for block in section.blocks %}
+              <li class="splide__slide testimonial-section--comment-wrapper">
+                <div class="testimonial-section--comment-inner-wrapper">
+                  <p>"{{ block.settings.testimonial_comment }}"</p>
+                  <div class="testimonial-section--comment-footer">
+                    <div>
+                      <img
+                        class="testimonial-author-avatar"
+                        src="{{ block.settings.testimonial_author_avatar | image_url }}"
+                        alt="{{ block.settings.testimonial_author }}"
+                        height=""
+                        width=""
+                      >
+                    </div>
+                    <div>
+                      <p class="testimonial-section--author-name">
+                        <strong>{{ block.settings.testimonial_author }}</strong>
+                      </p>
+                      <p class="testimonial-section--author-role">{{ block.settings.testimonial_role }}</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Testimonial Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Testimonials"
+    },
+    {
+      "type": "textarea",
+      "id": "section_description",
+      "label": "Section Description",
+      "default": "What our clients say about us."
+    },
+    {
+      "type": "header",
+      "content": "Slider settings"
+    },
+    {
+      "type": "select",
+      "id": "slide_type",
+      "label": "Slider type",
+      "options": [
+        {
+          "value": "loop",
+          "label": "Loop"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        },
+        {
+          "value": "slide",
+          "label": "Slide"
+        }
+      ],
+      "default": "slide"
+    },
+    {
+      "type": "checkbox",
+      "label": "Display arrows",
+      "id": "display_arrows",
+      "default": true,
+      "info": "Arrows are hidden in mobile devices"
+    },
+    {
+      "type": "checkbox",
+      "label": "Display dots",
+      "id": "display_dots",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "label": "Autoplay slide",
+      "id": "autoplay_slide",
+      "default": false
+    },
+    {
+      "type": "range",
+      "label": "Autoplay duration",
+      "id": "autoplay_duration",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "testimonial_image",
+          "label": "Testimonial Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "testimonial_author_avatar",
+          "label": "Testimonial Author avatar"
+        },
+        {
+          "type": "textarea",
+          "id": "testimonial_comment",
+          "label": "Testimonial Comment",
+          "default": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque"
+        },
+        {
+          "type": "text",
+          "id": "testimonial_author",
+          "label": "Author",
+          "default": "Mr. John Doe"
+        },
+        {
+          "type": "text",
+          "id": "testimonial_role",
+          "label": "Role",
+          "default": "Clients"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial Section"
+    }
+  ]
+}
+{% endschema %}

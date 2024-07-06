@@ -1,0 +1,49 @@
+{% comment %} SPLIDE CDN START {% endcomment %}
+<script
+  src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+  defer="defer"
+></script>
+<link
+  href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+  defer="defer"
+  rel="stylesheet"
+>
+{% comment %} SPLIDE CDN START {% endcomment %}
+
+{% comment %} FA CDN START {% endcomment %}
+<script src="https://kit.fontawesome.com/ca3b81fa8a.js" crossorigin="anonymous" defer="defer"></script>
+{% comment %} FA CDN END{% endcomment %}
+
+<script src="{{ 'pexel-products-section.js' | asset_url }}" defer="defer"></script>
+
+<article id="pexels-products-section-bg-container" class="page-width">
+  <section>
+    <section class="pps-input-container">
+      <div class="search-wrapper">
+        <input type="search" placeholder="Search..">
+        <button id="search-button" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </section>
+    <section id="first-product" class="first-product"></section>
+  </section>
+  <section>
+    <h2>Similar Results</h2>
+    <section id="splide-container-1">splide</section>
+  </section>
+  <section>
+    <h2>Favorites List</h2>
+    <section id="splide-container-2">splide</section>
+  </section>
+</article>
+
+{% schema %}
+{
+  "name": "Pexel products section",
+  "settings": [],"presets": [
+  {
+    "name": "Pexel product section"
+  }
+]
+
+}
+{% endschema %}

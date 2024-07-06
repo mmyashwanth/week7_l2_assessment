@@ -1,0 +1,168 @@
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Browse our latest products",
+            "heading_size": "h0"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop all",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-3",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "testimonial_section_9tfDjE": {
+      "type": "testimonial-section",
+      "blocks": {
+        "testimonial_NzaxwD": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_image": "shopify:\/\/shop_images\/Rectangle_14.png",
+            "testimonial_author_avatar": "shopify:\/\/shop_images\/Rectangle_8_1.png",
+            "testimonial_comment": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque",
+            "testimonial_author": "Mr. John Doe",
+            "testimonial_role": "Clients"
+          }
+        },
+        "testimonial_HTaDRp": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_image": "shopify:\/\/shop_images\/pexels-romjan-aly-17373336-6428245.jpg",
+            "testimonial_author_avatar": "shopify:\/\/shop_images\/Rectangle_8.png",
+            "testimonial_comment": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque",
+            "testimonial_author": "Mr. John Doe",
+            "testimonial_role": "Clients"
+          }
+        },
+        "testimonial_htGUap": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_image": "shopify:\/\/shop_images\/Rectangle_14.png",
+            "testimonial_author_avatar": "shopify:\/\/shop_images\/Rectangle_8.png",
+            "testimonial_comment": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque",
+            "testimonial_author": "Mr. John Doe",
+            "testimonial_role": "Clients"
+          }
+        },
+        "testimonial_GVFCAV": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_image": "shopify:\/\/shop_images\/pexels-romjan-aly-17373336-6428245.jpg",
+            "testimonial_author_avatar": "shopify:\/\/shop_images\/Rectangle_8_1.png",
+            "testimonial_comment": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque",
+            "testimonial_author": "Mr. John Doe",
+            "testimonial_role": "Clients"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_NzaxwD",
+        "testimonial_HTaDRp",
+        "testimonial_htGUap",
+        "testimonial_GVFCAV"
+      ],
+      "settings": {
+        "section_title": "Testimonials",
+        "section_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "slide_type": "loop",
+        "display_arrows": false,
+        "display_dots": true,
+        "autoplay_slide": false,
+        "autoplay_duration": 3,
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "newsletter_M4tmKz": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_qzyLCr": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our Newsletter",
+            "heading_size": "h1"
+          }
+        },
+        "email_form_6YPfUD": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading_qzyLCr",
+        "email_form_6YPfUD"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "featured_collection",
+    "testimonial_section_9tfDjE",
+    "newsletter_M4tmKz"
+  ]
+}
